@@ -1,0 +1,41 @@
+<div class="ds-input-wrapper" [class.ds-input--disabled]="disabled">
+  <div class="ds-input-header">
+    <label *ngIf="label" [for]="id" class="ds-input-label">
+      {{ label }}<span *ngIf="required" class="ds-input-required">*</span>
+    </label>
+    <span *ngIf="hint" class="ds-input-hint">{{ hint }}</span>
+  </div>
+
+  <div class="ds-input-container">
+    <i *ngIf="prefixIcon" class="ds-input-icon ds-input-icon--prefix" [class]="prefixIcon"></i>
+
+    <input
+      [id]="id"
+      [type]="currentType"
+      [placeholder]="placeholder"
+      [disabled]="disabled"
+      [value]="value"
+      (input)="onInputChange($event)"
+      class="ds-input-field"
+      [class.ds-input-field--error]="!!error"
+      [class.ds-input-field--has-prefix]="!!prefixIcon"
+      [class.ds-input-field--has-suffix]="!!currentSuffixIcon"
+    />
+
+    <i
+      *ngIf="currentSuffixIcon"
+      class="ds-input-icon ds-input-icon--suffix"
+      [class]="currentSuffixIcon"
+      [class.ds-input-icon--clickable]="type === 'password'"
+      (click)="togglePasswordVisibility()"
+    ></i>
+  </div>
+
+  <span *ngIf="error" class="ds-input-message ds-input-message--error">
+    {{ error }}
+  </span>
+
+  <span *ngIf="helperText && !error" class="ds-input-message ds-input-message--helper">
+    {{ helperText }}
+  </span>
+</div>

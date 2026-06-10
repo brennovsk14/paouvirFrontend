@@ -1,0 +1,12 @@
+<button
+  [class]="'btn btn-' + variant + ' btn-' + size"
+  [class.btn--only-icon]="onlyIcon"
+  [disabled]="disabled"
+>
+  <i *ngIf="prefixIcon" [class]="prefixIcon" class="btn-icon btn-icon--prefix"></i>
+  <span class="btn-text" *ngIf="!onlyIcon">
+    {{ label }}
+    <ng-content></ng-content>
+  </span>
+  <i *ngIf="suffixIcon && !onlyIcon" [class]="suffixIcon" class="btn-icon btn-icon--suffix"></i>
+</button>

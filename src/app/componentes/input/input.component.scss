@@ -1,0 +1,136 @@
+@import "index";
+
+.ds-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 200px;
+  margin-bottom: $spacing-2; // Reduzido de spacing-4 para spacing-2
+
+  .ds-input-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2px; // Reduzido de spacing-1 (4px) para 2px
+  }
+
+  .ds-input-label {
+    @extend .body-md;
+    font-weight: 500;
+    color: $color-gray-700;
+
+    .ds-input-required {
+      color: $color-danger-600;
+      margin-left: $spacing-1;
+    }
+  }
+
+  .ds-input-hint {
+    @extend .body-sm-regular;
+    color: $color-gray-500;
+    font-style: italic;
+  }
+
+  .ds-input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    .ds-input-icon {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $color-gray-400;
+      pointer-events: none;
+      z-index: 1;
+
+      &--prefix {
+        left: $spacing-3;
+      }
+
+      &--suffix {
+        right: $spacing-3;
+      }
+
+      &--clickable {
+        pointer-events: auto;
+        cursor: pointer;
+        &:hover {
+          color: $color-brand-azul;
+        }
+      }
+    }
+
+    .ds-input-field {
+      width: 100%;
+      height: 40px; // Reduzido de 44px para 40px
+      padding: 0 $spacing-3; // Reduzido padding lateral e removido vertical fixo (usando flex alignment)
+      border: 1px solid $color-gray-300;
+      border-radius: $spacing-1;
+      background-color: $color-gray-0;
+      color: $color-gray-900;
+      @extend .body-md; // Usando body-md para ser mais compacto
+      transition: all 0.2s ease-in-out;
+      outline: none;
+
+      &--has-prefix {
+        padding-left: $spacing-8;
+      }
+
+      &--has-suffix {
+        padding-right: $spacing-8;
+      }
+
+      &::placeholder {
+        color: $color-gray-400;
+      }
+
+      &:hover:not(:disabled) {
+        border-color: $color-gray-400;
+      }
+
+      &:focus:not(:disabled) {
+        border-color: $color-brand-azul;
+        box-shadow: 0 0 0 2px rgba($color-brand-azul, 0.1);
+      }
+
+      &--error {
+        border-color: $color-danger-500;
+
+        &:focus {
+          border-color: $color-danger-600;
+          box-shadow: 0 0 0 2px rgba($color-danger-500, 0.1);
+        }
+      }
+
+      &:disabled {
+        background-color: $color-gray-100;
+        color: $color-gray-400;
+        cursor: not-allowed;
+        border-color: $color-gray-200;
+      }
+    }
+  }
+
+  .ds-input-message {
+    @extend .body-sm-regular;
+    margin-top: 2px; // Reduzido de spacing-1 (4px) para 2px
+    font-size: 11px; // Ligeira redução para economizar espaço vertical
+
+    &--error {
+      color: $color-danger-600;
+    }
+
+    &--helper {
+      color: $color-gray-500;
+    }
+  }
+
+  &--disabled {
+    .ds-input-label {
+      color: $color-gray-400;
+    }
+  }
+}
