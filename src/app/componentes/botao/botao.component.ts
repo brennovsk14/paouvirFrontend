@@ -45,10 +45,10 @@ import { CommonModule } from '@angular/common';
   selector: 'app-button',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './button.component.html',
-  styleUrl: './button.component.scss'
+  templateUrl: './botao.component.html',
+  styleUrl: './botao.component.scss'
 })
-export class ButtonComponent {
+export class BotaoComponent {
   /** Texto do botão (opcional, pode ser passado via ng-content também) */
   @Input() label: string = '';
 

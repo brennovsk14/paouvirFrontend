@@ -1,8 +1,8 @@
 .box-login{
   display: flex;
-  width: 670px;
-  height: 634px;
-  padding: 10px;
+  width: 400px;
+  height: 350px;
+  padding: 50px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -11,4 +11,19 @@
   border: 5px solid #C670F8;
   background: #F3F3F3;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+
+  .form-login{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    .div-botao{
+      gap: 15px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+  }
 }
+

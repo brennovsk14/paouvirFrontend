@@ -1,15 +1,18 @@
-@import "index"; // Funciona por causa do includePaths no angular.json
+$btn-dark: #390058;
+$btn-primary: #8A38F5;
+$btn-accent: #C670F8;
+$btn-surface: #F3F3F3;
 
 .btn {
   display: inline-flex;
-  width:100%;
+  width: 100%;
   align-items: center;
   justify-content: center;
-  gap: $spacing-2;
+  gap: 10px;
   border: 1px solid transparent;
-  border-radius: $spacing-1;
+  border-radius: 15px;
   cursor: pointer;
-  @extend .body-medium;
+  //@extend .body-medium;
   transition: all 0.2s ease-in-out;
   white-space: nowrap;
 
@@ -21,57 +24,78 @@
   }
 
   &-primary {
-    background-color: $color-brand-azul;
-    color: $color-gray-0;
+    background-color: $btn-primary;
+    color: $btn-surface;
+    border-color: $btn-primary;
+
     &:hover:not(:disabled) {
-      background-color: $color-info-700;
+      background-color: $btn-accent;
+      border-color: $btn-accent;
     }
   }
 
   &-secondary {
-    background-color: transparent;
-    border-color: $color-gray-300;
-    color: $color-gray-700;
+    background-color: $btn-surface;
+    border-color: $btn-dark;
+    color: $btn-dark;
+
     &:hover:not(:disabled) {
-      background-color: $color-gray-50;
-      border-color: $color-gray-400;
+      background-color: $btn-dark;
+      border-color: $btn-primary;
+      color: $btn-surface;
     }
   }
 
   &-danger {
-    background-color: $color-danger-500;
-    color: $color-gray-0;
+    background-color: $btn-dark;
+    border-color: $btn-accent;
+    color: $btn-surface;
+
     &:hover:not(:disabled) {
-      background-color: $color-danger-700;
+      background-color: $btn-primary;
+      border-color: $btn-surface;
+      color: $btn-surface;
     }
   }
 
   // Tamanhos
   &-sm {
     height: 32px;
-    padding: 0 $spacing-3;
+    padding: 0 12px;
     font-size: 12px;
-    &.btn--only-icon { width: 32px; padding: 0; }
+
+    &.btn--only-icon {
+      width: 32px;
+      padding: 0;
+    }
   }
 
   &-md {
-    height: 40px; // Reduzido de 44px para 40px como solicitado
-    padding: 0 $spacing-4;
-    &.btn--only-icon { width: 40px; padding: 0; }
+    height: 40px;
+    padding: 0 16px;
+
+    &.btn--only-icon {
+      width: 40px;
+      padding: 0;
+    }
   }
 
   &-lg {
     height: 48px;
-    padding: 0 $spacing-6;
+    padding: 0 24px;
     font-size: 18px;
-    &.btn--only-icon { width: 48px; padding: 0; }
+
+    &.btn--only-icon {
+      width: 48px;
+      padding: 0;
+    }
   }
 
   &:disabled {
     cursor: not-allowed;
-    opacity: 0.5;
-    background-color: $color-gray-200;
-    border-color: $color-gray-300;
-    color: $color-gray-500;
+    opacity: 0.6;
+    background-color: $btn-surface;
+    border-color: $btn-accent;
+    color: $btn-dark;
   }
 }
