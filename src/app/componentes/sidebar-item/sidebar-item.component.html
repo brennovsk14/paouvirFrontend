@@ -1,1 +1,29 @@
-<p>sidebar-item works!</p>
+<div class="ds-sidebar-item"
+     [class.ds-sidebar-item--active]="item.active"
+     [class.ds-sidebar-item--collapsed]="collapsed"
+     [class.ds-sidebar-item--disabled]="item.disabled"
+     [class.ds-sidebar-item--expanded]="item.expanded"
+     [attr.title]="collapsed ? item.label : null"
+     (click)="onClick($event)">
+
+  <div class="ds-sidebar-item-content">
+    <i *ngIf="item.icon" [class]="item.icon" class="ds-sidebar-item-icon"></i>
+    <span class="ds-sidebar-item-label" *ngIf="!collapsed">{{ item.label }}</span>
+
+    <i *ngIf="!collapsed && item.children && item.children.length > 0"
+       class="fa ds-sidebar-item-arrow"
+       [class.fa-chevron-down]="item.expanded"
+       [class.fa-chevron-right]="!item.expanded">
+    </i>
+  </div>
+
+  <!-- Submenu (Árvore) -->
+  <div class="ds-sidebar-item-children"
+       *ngIf="!collapsed && item.children && item.children.length > 0 && item.expanded">
+    <app-sidebar-item
+      *ngFor="let child of item.children"
+      [item]="child"
+      (itemClick)="onSubItemClick($event)">
+    </app-sidebar-item>
+  </div>
+</div>

@@ -1,1 +1,40 @@
-<p>sidebar works!</p>
+<!-- Overlay para mobile -->
+<div class="ds-sidebar-overlay"
+     *ngIf="isMobile() && visible"
+     (click)="close()">
+</div>
+
+<!-- Container da Sidebar -->
+<aside class="ds-sidebar"
+       [class.ds-sidebar--collapsed]="collapsed"
+       [class.ds-sidebar--mobile]="isMobile()"
+       [class.ds-sidebar--visible]="visible">
+
+  <!-- Header da Sidebar -->
+  <div class="ds-sidebar-header">
+    <div class="ds-sidebar-logo" *ngIf="!collapsed">
+      <ng-content select="[logo]"></ng-content>
+    </div>
+    <button class="ds-sidebar-toggle" (click)="toggleCollapse()" *ngIf="!isMobile()">
+      <i class="fa" [class.fa-indent]="collapsed" [class.fa-outdent]="!collapsed"></i>
+    </button>
+    <button class="ds-sidebar-close" (click)="close()" *ngIf="isMobile()">
+      <i class="fa fa-times"></i>
+    </button>
+  </div>
+
+  <!-- Área de Conteúdo / Menu -->
+  <nav class="ds-sidebar-nav">
+    <app-sidebar-item
+      *ngFor="let item of items"
+      [item]="item"
+      [collapsed]="collapsed"
+      (itemClick)="onItemClick($event)">
+    </app-sidebar-item>
+  </nav>
+
+  <!-- Footer da Sidebar -->
+  <div class="ds-sidebar-footer">
+    <ng-content select="[footer]"></ng-content>
+  </div>
+</aside>

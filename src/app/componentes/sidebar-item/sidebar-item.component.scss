@@ -1,0 +1,165 @@
+.ds-sidebar-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+
+  &-content {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    min-height: 48px;
+    gap: 12px;
+    color: rgba(255, 255, 255, 0.72);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 12px;
+    margin: 4px 12px;
+    position: relative;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.08);
+      color: #FFFFFF;
+    }
+  }
+
+  &-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: all 0.2s;
+    opacity: 0.8;
+  }
+
+  &-label {
+    flex: 1;
+    @extend .body-md-medium;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &-arrow {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.45);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s;
+  }
+
+  &--expanded > &-content {
+    .ds-sidebar-item-arrow {
+      color: #FFFFFF;
+    }
+  }
+
+  // Estados
+  &--active > &-content {
+    background: linear-gradient(90deg, rgba(138, 56, 245, 0.95), rgba(198, 112, 248, 0.95));
+    color: #F3F3F3;
+    font-weight: 600;
+    box-shadow: 0 10px 22px rgba(57, 0, 88, 0.24);
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: -12px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 4px;
+      height: 24px;
+      background-color: #F3F3F3;
+      border-radius: 0 4px 4px 0;
+      box-shadow: 0 0 10px rgba(198, 112, 248, 0.65);
+    }
+
+    .ds-sidebar-item-icon {
+      opacity: 1;
+      color: #F3F3F3;
+      transform: scale(1.1);
+    }
+
+    .ds-sidebar-item-arrow {
+      color: #F3F3F3;
+    }
+  }
+
+  &--disabled {
+    pointer-events: none;
+    opacity: 0.45;
+  }
+
+  &--collapsed {
+    .ds-sidebar-item-content {
+      justify-content: center;
+      padding: 8px;
+      margin: 4px auto;
+      width: 48px;
+      min-height: 48px;
+
+      &::before {
+        display: none; // Esconde o indicador de borda externa no modo colapsado
+      }
+    }
+
+    &.ds-sidebar-item--active .ds-sidebar-item-content {
+      background: #F3F3F3;
+      color: #390058;
+      box-shadow: 0 10px 18px rgba(57, 0, 88, 0.18);
+
+      .ds-sidebar-item-icon {
+        color: #390058;
+        opacity: 1;
+      }
+    }
+
+    .ds-sidebar-item-label,
+    .ds-sidebar-item-arrow {
+      display: none;
+    }
+  }
+
+  // Filhos (Nível de indentação)
+  &-children {
+    display: flex;
+    flex-direction: column;
+    padding-left: 12px;
+    overflow: hidden;
+    animation: slideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(255, 255, 255, 0.04);
+    margin: 0 12px;
+    border-radius: 0 0 12px 12px;
+    position: relative;
+
+    // Linha conectora vertical
+    &::after {
+      content: '';
+      position: absolute;
+      left: 24px;
+      top: 0;
+      bottom: 12px;
+      width: 1px;
+      background-color: rgba(255, 255, 255, 0.16);
+    }
+
+    .ds-sidebar-item-content {
+      margin: 2px 0;
+      min-height: 40px;
+      font-size: 14px;
+      padding-left: 36px; // Espaço para a linha conectora
+    }
+  }
+}
+
+@keyframes slideDown {
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+  to {
+    max-height: 1000px;
+    opacity: 1;
+  }
+}

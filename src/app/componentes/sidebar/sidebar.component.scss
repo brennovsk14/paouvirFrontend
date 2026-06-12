@@ -1,0 +1,110 @@
+.ds-sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(57, 0, 88, 0.45);
+  z-index: 1000;
+  backdrop-filter: blur(2px);
+  animation: fadeIn 0.25s ease;
+}
+
+.ds-sidebar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 264px;
+  background: linear-gradient(180deg, #390058 0%, #4e0874 100%);
+  border-right: 1px solid rgba(198, 112, 248, 0.25);
+  display: flex;
+  flex-direction: column;
+  z-index: 1001;
+  transition: width 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 4px 0 28px rgba(57, 0, 88, 0.22);
+
+  &--collapsed {
+    width: 72px;
+  }
+
+  &--mobile {
+    transform: translateX(-100%);
+    width: 280px;
+
+    &.ds-sidebar--visible {
+      transform: translateX(0);
+    }
+  }
+
+  &-header {
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    border-bottom: 1px solid rgba(198, 112, 248, 0.25);
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  &-logo {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    color: rgba(255, 255, 255, 0.72);
+
+  }
+
+  &-toggle, &-close {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: rgba(255, 255, 255, 0.72);
+    cursor: pointer;
+    font-size: 14px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.16);
+      color: #FFFFFF;
+      transform: scale(1.05);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+
+  &-nav {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 16px 0;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 10px;
+    }
+
+    &:hover::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.22);
+    }
+  }
+
+  &-footer {
+    padding: 16px;
+    border-top: 1px solid rgba(198, 112, 248, 0.25);
+    background: rgba(255, 255, 255, 0.03);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
