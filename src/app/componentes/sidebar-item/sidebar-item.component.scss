@@ -37,7 +37,7 @@
 
   &-label {
     flex: 1;
-    @extend .body-md-medium;
+    //@extend .body-md-medium;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -151,15 +151,15 @@
       padding-left: 36px; // Espaço para a linha conectora
     }
   }
-}
 
-@keyframes slideDown {
-  from {
-    max-height: 0;
-    opacity: 0;
-  }
-  to {
-    max-height: 1000px;
-    opacity: 1;
+  @keyframes slideDown {
+    from {
+      max-height: 0;
+      opacity: 0;
+    }
+    to {
+      max-height: 1000px;
+      opacity: 1;
+    }
   }
 }

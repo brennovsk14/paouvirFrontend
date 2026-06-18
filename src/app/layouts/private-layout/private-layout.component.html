@@ -1,5 +1,26 @@
 <div class="privateLayout">
   <div class="sidenav">
-    <app-sidebar [items]="items"></app-sidebar>
+    <app-sidebar [items]="items">
+<!--      [(collapsed)]="isCollapsed"-->
+<!--      [(visible)]="isVisible"-->
+<!--      (itemClick)="onMenuSelect($event)">-->
+
+<!--      <div logo class="d-flex align-items-center gap-2 p-3">-->
+<!--        <img src="assets/img/LogoPaouvir.svg" alt="" width="55" height="55" />-->
+<!--        <span class="fs-5 fw-bold text-white">Paouvir</span>-->
+<!--      </div>-->
+      <div logo class="d-flex align-items-center gap-2 p-3">
+        <img src="assets/img/LogoPaouvir.svg" alt="" width="55" height="55" class="d-block" />
+      </div>
+
+      <div footer style="display: flex; align-items: center; gap: 12px; padding: 8px; width: 100%; overflow: hidden;">
+        <div *ngIf="!sidebarRecolhida" style="overflow: hidden; white-space: nowrap;">
+          <p class="body-sm-bold" style="margin: 0; color: #FFF;"></p>
+          <p class="body-sm-bold" style="margin: 0; color: #FFF;"></p>
+          <p class="body-xs-regular"
+             style="font-size:8px;margin: 0; color: rgba(255,255,255,0.6);"></p>
+        </div>
+      </div>
+    </app-sidebar>
   </div>
 </div>
