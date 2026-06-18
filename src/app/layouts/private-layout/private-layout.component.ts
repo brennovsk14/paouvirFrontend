@@ -17,10 +17,10 @@ import {RouterOutlet} from '@angular/router';
 export class PrivateLayoutComponent {
 
   items: SidebarItem[] = [
-    {label: 'Menu', icon: 'home'},
-    {label: 'Bandas', icon: 'people'},
-    {label: 'Álbuns', icon: 'album'},
-    {label: 'Músicas', icon: 'music_note'},
+    {label: 'Menu', icon: 'fa fa-home'},
+    {label: 'Bandas', icon: 'fa fa-people-group'},
+    {label: 'Álbuns', icon: 'fa fa-compact-disc'},
+    {label: 'Músicas', icon: 'fa fa-headphones'},
   ];
 
   sidebarRecolhida: boolean = false;
