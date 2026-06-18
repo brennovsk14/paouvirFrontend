@@ -1,16 +1,17 @@
 <div class="privateLayout">
   <div class="sidenav">
-    <app-sidebar [items]="items">
-<!--      [(collapsed)]="isCollapsed"-->
-<!--      [(visible)]="isVisible"-->
-<!--      (itemClick)="onMenuSelect($event)">-->
 
-<!--      <div logo class="d-flex align-items-center gap-2 p-3">-->
-<!--        <img src="assets/img/LogoPaouvir.svg" alt="" width="55" height="55" />-->
-<!--        <span class="fs-5 fw-bold text-white">Paouvir</span>-->
-<!--      </div>-->
+    <app-sidebar [items]="items">
+      <!--      [(collapsed)]="isCollapsed"-->
+      <!--      [(visible)]="isVisible"-->
+      <!--      (itemClick)="onMenuSelect($event)">-->
+
+      <!--      <div logo class="d-flex align-items-center gap-2 p-3">-->
+      <!--        <img src="assets/img/LogoPaouvir.svg" alt="" width="55" height="55" />-->
+      <!--        <span class="fs-5 fw-bold text-white">Paouvir</span>-->
+      <!--      </div>-->
       <div logo class="d-flex align-items-center gap-2 p-3">
-        <img src="assets/img/LogoPaouvir.svg" alt="" width="55" height="55" class="d-block" />
+        <img src="assets/img/LogoPaouvir.svg" alt="" width="55" height="55" class="d-block"/>
       </div>
 
       <div footer style="display: flex; align-items: center; gap: 12px; padding: 8px; width: 100%; overflow: hidden;">
@@ -23,4 +24,13 @@
       </div>
     </app-sidebar>
   </div>
+
+
+  <div class="main">
+    <div class="renderizarViewContent">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>
+
+

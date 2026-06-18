@@ -17,7 +17,7 @@ import {RouterOutlet} from '@angular/router';
 export class PrivateLayoutComponent {
 
   items: SidebarItem[] = [
-    {label: 'Menu', icon: 'fa fa-home'},
+    {label: 'Menu', icon: 'fa fa-home', routerLink: '/menu'},
     {label: 'Bandas', icon: 'fa fa-people-group'},
     {label: 'Álbuns', icon: 'fa fa-compact-disc'},
     {label: 'Músicas', icon: 'fa fa-headphones'},
@@ -28,7 +28,7 @@ export class PrivateLayoutComponent {
   title?: string = "Paouvir";
 
   constructor(
-    // private router: RouterOutlet,
+    private router: RouterOutlet,
   ) {}
 
 }
