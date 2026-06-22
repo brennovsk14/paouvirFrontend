@@ -1,0 +1,18 @@
+<div class="ds-card" [ngClass]="cardClasses">
+  <div *ngIf="image" class="ds-card-image-wrapper">
+    <img [src]="image" [alt]="alt" class="ds-card-image">
+  </div>
+
+  <div class="ds-card-header" *ngIf="title || subtitle">
+    <h3 *ngIf="title" class="ds-card-title">{{ title }}</h3>
+    <p *ngIf="subtitle" class="ds-card-subtitle">{{ subtitle }}</p>
+  </div>
+
+  <div class="ds-card-body">
+    <ng-content></ng-content>
+  </div>
+
+  <div class="ds-card-footer">
+    <ng-content select="[footer]"></ng-content>
+  </div>
+</div>
