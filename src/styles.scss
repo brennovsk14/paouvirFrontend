@@ -3,6 +3,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
 @import '@fortawesome/fontawesome-free/css/all.min.css';
 
+:root {
+  --btn-dark: #390058;
+  --btn-primary: #8A38F5;
+  --btn-accent: #C670F8;
+  --btn-surface: #F3F3F3;
+
+  --input-dark: #390058;
+  --input-primary: #8A38F5;
+  --input-accent: #C670F8;
+  --input-surface: #F3F3F3;
+}
+
 html, body {
   font-family: 'Lato', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
