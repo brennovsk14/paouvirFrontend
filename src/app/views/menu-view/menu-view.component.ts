@@ -7,7 +7,7 @@ import {CardComponent} from '../../componentes/card-component/card-component';
 @Component({
   selector: 'app-menu-view',
   standalone: true,
-  imports: [CommonModule, SidebarComponent, BotaoComponent],
+  imports: [CommonModule, SidebarComponent, BotaoComponent, CardComponent],
   templateUrl: './menu-view.component.html',
   styleUrl: './menu-view.component.scss'
 })
