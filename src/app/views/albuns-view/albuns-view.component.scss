@@ -1,0 +1,28 @@
+span{
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-gray-900);
+}
+
+.albuns{
+  align-items: center;
+}
+
+.headerAlbuns{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.cardAlbuns{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
