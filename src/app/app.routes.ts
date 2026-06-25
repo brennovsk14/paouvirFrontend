@@ -6,6 +6,7 @@ import {ViewLoginComponent} from './views/view-login/view-login.component';
 import {MenuViewComponent} from './views/menu-view/menu-view.component';
 import {BandasViewComponent} from './views/bandas-view/bandas-view.component';
 import {AlbunsViewComponent} from './views/albuns-view/albuns-view.component';
+import {ViewCadastroComponent} from './views/view-cadastro/view-cadastro.component';
 
 export const routes: Routes = [
   {
@@ -15,6 +16,10 @@ export const routes: Routes = [
       {
         path: 'login',
         component: ViewLoginComponent,
+      },
+      {
+        path: 'cadastro',
+        component: ViewCadastroComponent,
       }
     ]
   },
