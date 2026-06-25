@@ -9,10 +9,10 @@
   </div>
 
   <div class="cardBandas">
-    <app-card [hoverable] = "true" title="TESTE"></app-card>
-    <app-card [hoverable] = "true" title="TESTE"></app-card>
-    <app-card [hoverable] = "true" title="TESTE"></app-card>
-    <app-card [hoverable] = "true" title="TESTE"></app-card>
-    <app-card [hoverable] = "true" title="TESTE"></app-card>
+    <app-card
+      *ngFor="let banda of bandas"
+      [hoverable] = "true"
+      [title]="banda.nome"
+    ></app-card>
   </div>
 </div>

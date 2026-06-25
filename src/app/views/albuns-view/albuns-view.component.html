@@ -9,11 +9,11 @@
   </div>
 
   <div class="cardAlbuns">
-    <app-card [hoverable] = "true" title="TESTE"></app-card>
-    <app-card [hoverable] = "true" title="TESTE"></app-card>
-    <app-card [hoverable] = "true" title="TESTE"></app-card>
-    <app-card [hoverable] = "true" title="TESTE"></app-card>
-    <app-card [hoverable] = "true" title="TESTE"></app-card>
+    <app-card
+      *ngFor="let album of albuns"
+      [hoverable] = "true"
+      [title]="album.nome"
+    ></app-card>
   </div>
 
 </div>

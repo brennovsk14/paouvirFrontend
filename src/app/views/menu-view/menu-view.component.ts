@@ -15,15 +15,8 @@ import {AlbumServiceService} from '../../services/album-service.service';
 })
 export class MenuViewComponent implements OnInit {
 
-  bandas: any[] = [
-    {nome: 'banda teste1'},
-    {nome: 'banda teste2'}
-  ];
-
-  albuns: any[] = [
-    {nome: 'album teste1'},
-    {nome: 'album teste2'}
-  ];
+  bandas: any[] = [];
+  albuns: any[] = [];
 
   constructor (private bandaService: BandaServiceService, private albumService: AlbumServiceService) {}
 
