@@ -9,13 +9,14 @@
       ></app-button>
     </div>
 
-    <div class="cardBandas">
-      <app-card
-        *ngFor="let banda of bandas"
-        [hoverable] = "true"
-        [title]="banda.nome"
-      ></app-card>
-    </div>
+    <app-carrossel [listaItens]="bandas" [itemTemplate]="cardBandaTemplate"></app-carrossel>
+      <ng-template #cardBandaTemplate let-banda>
+        <app-card
+          [hoverable]="true"
+          [title]="banda.nome"
+        ></app-card>
+      </ng-template>
+
   </div>
 
   <div class="albuns">
@@ -28,12 +29,12 @@
       ></app-button>
     </div>
 
-    <div class="cardAlbuns">
-      <app-card
-        *ngFor="let album of albuns"
-        [hoverable] = "true"
-        [title]="album.nome"
-      ></app-card>
-    </div>
+    <app-carrossel [listaItens]="albuns" [itemTemplate]="cardAlbumTemplate"></app-carrossel>
+      <ng-template #cardAlbumTemplate let-album>
+        <app-card
+          [hoverable]="true"
+          [title]="album.nome"
+        ></app-card>
+      </ng-template>
   </div>
 </div>

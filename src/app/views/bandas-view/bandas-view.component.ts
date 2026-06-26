@@ -4,11 +4,12 @@ import {BotaoComponent} from '../../componentes/botao/botao.component';
 import {CardComponent} from '../../componentes/card-component/card-component';
 import {BandaServiceService} from '../../services/banda-service.service';
 import {AlbumServiceService} from '../../services/album-service.service';
+import {CarrosselComponent} from '../../componentes/carrossel/carrossel.component';
 
 @Component({
   selector: 'app-bandas-view',
   standalone: true,
-  imports: [CommonModule, BotaoComponent, CardComponent],
+  imports: [CommonModule, BotaoComponent, CardComponent, CarrosselComponent],
   templateUrl: './bandas-view.component.html',
   styleUrl: './bandas-view.component.scss'
 })

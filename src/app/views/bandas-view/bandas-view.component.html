@@ -8,11 +8,11 @@
     ></app-button>
   </div>
 
-  <div class="cardBandas">
+  <app-carrossel [listaItens]="bandas" [itemTemplate]="cardBandaTemplate"></app-carrossel>
+  <ng-template #cardBandaTemplate let-banda>
     <app-card
-      *ngFor="let banda of bandas"
-      [hoverable] = "true"
+      [hoverable]="true"
       [title]="banda.nome"
     ></app-card>
-  </div>
+  </ng-template>
 </div>

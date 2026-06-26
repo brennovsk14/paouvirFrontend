@@ -4,13 +4,15 @@ import {BotaoComponent} from '../../componentes/botao/botao.component';
 import {NgForOf} from '@angular/common';
 import {BandaServiceService} from '../../services/banda-service.service';
 import {AlbumServiceService} from '../../services/album-service.service';
+import {CarrosselComponent} from '../../componentes/carrossel/carrossel.component';
 
 @Component({
   selector: 'app-albuns-view',
   imports: [
     CardComponent,
     BotaoComponent,
-    NgForOf
+    NgForOf,
+    CarrosselComponent
   ],
   templateUrl: './albuns-view.component.html',
   styleUrl: './albuns-view.component.scss'

@@ -1,8 +1,9 @@
-.bandas{
+.bandas, .albuns{
   align-items: center;
+  margin: 1rem 0 0 0;
 }
 
-.headerBandas{
+.headerBandas, .headerAlbuns{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -15,31 +16,8 @@ span{
   color: var(--color-gray-900);
 }
 
-.albuns{
-  align-items: center;
-}
-
-.headerAlbuns{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .content{
   display: flex;
   flex-direction: column;
-gap: 3rem;
-}
-
-.cardAlbuns{
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-}
-
-.cardBandas{
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
+  gap: 3rem;
 }
