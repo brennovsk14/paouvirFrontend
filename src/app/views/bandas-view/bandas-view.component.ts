@@ -5,6 +5,9 @@ import {CardComponent} from '../../componentes/card-component/card-component';
 import {BandaServiceService} from '../../services/banda-service.service';
 import {AlbumServiceService} from '../../services/album-service.service';
 import {CarrosselComponent} from '../../componentes/carrossel/carrossel.component';
+import {CadastroBandaComponent} from '../../componentes/cadastro-banda/cadastro-banda.component';
+import {Router} from '@angular/router';
+import {ModalService} from '../../services/modal-service';
 
 @Component({
   selector: 'app-bandas-view',
@@ -17,7 +20,7 @@ export class BandasViewComponent implements OnInit {
 
   bandas: any[] = [];
 
-  constructor(private bandaService: BandaServiceService) {
+  constructor(private bandaService: BandaServiceService, private modalService: ModalService,) {
   }
 
   ngOnInit(): void {
@@ -30,6 +33,20 @@ export class BandasViewComponent implements OnInit {
       error: (err) => console.error('Erro ao buscar bandas:', err)
     });
 
+  }
+  abrirModalCadastroBanda() {
+    const modalRef = this.modalService.open(CadastroBandaComponent, {
+      title: 'Cadastrar Nova Banda',
+      size: 'md', // 'sm' | 'md' | 'lg' | 'full'
+      closeOnClickOutside: true
+    });
+
+    modalRef.afterClosed((resultado) => {
+      if (resultado && resultado.sucesso) {
+        console.log('Banda cadastrada:', resultado.nomeBanda);
+        this.carregarDados(); // Recarrega a lista para mostrar o novo item no carrossel!
+      }
+    });
   }
 }
 
