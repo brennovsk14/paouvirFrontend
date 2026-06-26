@@ -1,0 +1,23 @@
+<div class="ds-modal-overlay" (click)="onBackdropClick()" [class.is-visible]="isVisible">
+  <div
+    class="ds-modal-container"
+    [class]="'ds-modal--' + size"
+    (click)="$event.stopPropagation()"
+    [class.is-open]="isVisible"
+  >
+    <!-- Cabeçalho da Modal -->
+    <div class="ds-modal-header" *ngIf="title">
+      <h3 class="ds-modal-title body-md-bold">{{ title }}</h3>
+      <button type="button" class="ds-modal-close" (click)="close()" aria-label="Fechar modal">
+        <i class="fa fa-times"></i>
+      </button>
+    </div>
+
+    <!-- Corpo da Modal (Onde o componente dinâmico será injetado) -->
+    <div class="ds-modal-body">
+      <ng-container #modalContent></ng-container>
+    </div>
+
+    <!-- O rodapé geralmente é definido dentro do componente injetado para maior flexibilidade -->
+  </div>
+</div>

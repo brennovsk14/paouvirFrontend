@@ -1,0 +1,48 @@
+<div class="form-container">
+  <div class="form-group">
+    <label for="nomeBanda">Nome da Banda</label>
+    <input
+      type="text"
+      id="nomeBanda"
+      placeholder="Ex: Charlie Brown Jr."
+      [(ngModel)]="novaBanda.nome"
+      name="nome"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="generoBanda">Gênero Musical</label>
+    <input
+      type="text"
+      id="generoBanda"
+      placeholder="Ex: Rock, Pop, Reggae"
+      [(ngModel)]="novaBanda.genero"
+      name="genero"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="anoFormacao">Ano de Formação</label>
+    <input
+      type="number"
+      id="anoFormacao"
+      placeholder="Ex: 1992"
+      [(ngModel)]="novaBanda.anoFormacao"
+      name="anoFormacao"
+    />
+  </div>
+
+  <div class="form-actions">
+    <app-button
+      label="Cancelar"
+      variant="secondary"
+      (click)="fechar()">
+    </app-button>
+
+    <app-button
+      label="Salvar Banda"
+      variant="primary"
+      (click)="salvar()">
+    </app-button>
+  </div>
+</div>
